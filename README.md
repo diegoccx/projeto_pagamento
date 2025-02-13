@@ -12,29 +12,34 @@ Para começar, clone o repositório para a sua máquina local.
 
 ```bash
 git clone https://github.com/diegoccx/projeto_pagamento.git
+```
+
 Instalação das Dependências
 Navegue até o diretório do projeto clonado e instale as dependências necessárias utilizando o npm:
-
+```
 bash
 Copiar
 Editar
 cd projeto_pagamento
 npm install
+```
 Isso irá instalar todas as dependências do Node.js listadas no arquivo package.json.
 
 Iniciando o Servidor
 Após a instalação das dependências, você pode iniciar o servidor local para rodar a aplicação:
 
+```
 bash
 Copiar
 Editar
 npm start
+```
 A aplicação estará disponível em http://localhost:3000.
 
 Tabelas de Banco de Dados
 Tabela de Pagamentos
 Esta tabela armazena todas as transações de pagamento realizadas. A tabela é crucial para registrar os detalhes de cada pagamento, como o valor, método de pagamento e status.
-
+```
 sql
 Copiar
 Editar
@@ -47,6 +52,7 @@ CREATE TABLE pagamentos (
     data_conclusao TIMESTAMP,
     descricao VARCHAR(255)
 );
+```
 Campos:
 
 id: Identificador único do pagamento.
@@ -59,6 +65,7 @@ descricao: Descrição opcional para o pagamento.
 Tabela de Log de Transações
 A tabela de logs é essencial para registrar todos os eventos e ações realizadas na aplicação. Isso facilita a auditoria e o rastreamento de erros.
 
+```
 sql
 Copiar
 Editar
@@ -68,6 +75,7 @@ CREATE TABLE logs (
     mensagem TEXT NOT NULL,
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+```
 Campos:
 
 id: Identificador único do log.
@@ -93,6 +101,7 @@ Após o pagamento ser identificado, o status é atualizado para concluído.
 Exemplo de Uso da API de Pagamento
 Aqui está um exemplo de como você pode fazer um pagamento via API:
 
+```
 bash
 Copiar
 Editar
@@ -102,6 +111,7 @@ POST /api/pagamentos
     "metodo_pagamento": "pix",
     "descricao": "Pagamento por produto A"
 }
+
 Resposta:
 json
 Copiar
@@ -113,6 +123,7 @@ Editar
     "valor": 150.00,
     "data_criacao": "2025-02-13T14:00:00Z"
 }
+```
 Conclusão
 Esse roteiro oferece uma visão completa de como instalar, configurar e usar a aplicação de pagamento, além de incluir a estrutura das tabelas de banco de dados necessárias. O sistema está pronto para processar pagamentos via Pix, cartão de crédito e boleto, com rastreamento detalhado de transações e logs.
 
