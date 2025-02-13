@@ -1,15 +1,19 @@
-Aplicação de Pagamento
-Descrição da Aplicação
+# Aplicação de Pagamento
+
+## Descrição da Aplicação
+
 Esta aplicação permite realizar pagamentos utilizando os métodos Pix, cartão de crédito e boleto. Ela gera registros de pagamento e logs de todas as transações realizadas, com o objetivo de facilitar a gestão e auditoria dos pagamentos.
 
-Instalação e Execução
-Clonando o Repositório Para começar, clone o repositório para a sua máquina local.
+## Instalação e Execução
 
-bash
-Copiar
-Editar
+### Clonando o Repositório
+
+Para começar, clone o repositório para a sua máquina local.
+
+```bash
 git clone https://github.com/diegoccx/projeto_pagamento.git
-Instalação das Dependências Navegue até o diretório do projeto clonado e instale as dependências necessárias utilizando o npm:
+Instalação das Dependências
+Navegue até o diretório do projeto clonado e instale as dependências necessárias utilizando o npm:
 
 bash
 Copiar
@@ -18,7 +22,8 @@ cd projeto_pagamento
 npm install
 Isso irá instalar todas as dependências do Node.js listadas no arquivo package.json.
 
-Iniciando o Servidor Após a instalação das dependências, você pode iniciar o servidor local para rodar a aplicação:
+Iniciando o Servidor
+Após a instalação das dependências, você pode iniciar o servidor local para rodar a aplicação:
 
 bash
 Copiar
@@ -71,19 +76,16 @@ mensagem: A mensagem registrada no log, descrevendo o evento.
 data_criacao: Data e hora em que o log foi criado.
 Fluxo de Pagamento
 Pix
-
 O usuário escolhe Pix como método de pagamento.
 A aplicação gera um código de pagamento Pix (chave ou QR Code).
 O pagamento é registrado na tabela de pagamentos com o status pendente.
 Após a confirmação do pagamento, o status é atualizado para concluído.
 Cartão de Crédito
-
 O usuário fornece os dados do cartão de crédito.
 A aplicação valida os dados e realiza a cobrança.
 O pagamento é registrado na tabela de pagamentos com o status pendente.
 Após a confirmação da transação, o status é atualizado para concluído.
 Boleto
-
 O usuário escolhe boleto como método de pagamento.
 A aplicação gera um código de barras ou link para o boleto.
 O pagamento é registrado na tabela de pagamentos com o status pendente.
@@ -101,7 +103,6 @@ POST /api/pagamentos
     "descricao": "Pagamento por produto A"
 }
 Resposta:
-
 json
 Copiar
 Editar
