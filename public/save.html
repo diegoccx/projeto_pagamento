@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamentos Perfec Pay</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <!-- Inclusão da biblioteca IMask -->
+  <script src="https://unpkg.com/imask"></script>
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>Pagamentos</h1>
+    <form id="formPagamento" novalidate>
+      <div class="form-group">
+        <label for="metodoPagamento">Método de Pagamento</label>
+        <select class="form-control" id="metodoPagamento" name="metodoPagamento">
+          <option value="boleto">Boleto</option>
+          <option value="cartao">Cartão de Crédito</option>
+          <option value="pix">Pix</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="valor">Valor</label>
+        <!-- Utiliza type="text" para permitir a aplicação da máscara -->
+        <input type="text" class="form-control" id="valor" name="valor" required>
+        <small id="erroValor" class="text-danger" style="display:none;">Campo Valor obrigatório e deve ser maior que zero</small>
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input type="text" class="form-control" id="descricao" name="descricao" required>
+        <small id="erroDescricao" class="text-danger" style="display:none;">Campo descrição obrigatório</small>
+      </div>
+      <div class="form-group">
+        <label for="cliente">Cliente</label>
+        <input type="text" class="form-control" id="cliente" name="cliente" required>
+        <small id="erroCliente" class="text-danger" style="display:none;">Campo cliente obrigatório</small>
+      </div>
+      <div id="dadosCartao" style="display: none;">
+        <h5>Dados do Cartão</h5>
+        <div class="form-group">
+          <label for="numeroCartao">Número do Cartão</label>
+          <input type="text" class="form-control" id="numeroCartao" name="numeroCartao">
+        </div>
+        <div class="form-group">
+          <label for="nomeTitular">Nome do Titular</label>
+          <input type="text" class="form-control" id="nomeTitular" name="nomeTitular">
+        </div>
+        <div class="form-group">
+          <label for="validadeCartao">Validade (MM/AA)</label>
+          <input type="text" class="form-control" id="validadeCartao" name="validadeCartao">
+        </div>
+        <div class="form-group">
+          <label for="codigoSeguranca">Código de Segurança</label>
+          <input type="text" class="form-control" id="codigoSeguranca" name="codigoSeguranca">
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Pagar</button>
+    </form>
+    <div id="resultado" class="mt-3"></div>
+  </div>
+  <script>
+    // Exibe ou oculta os campos do cartão conforme o método selecionado
+    document.getElementById('metodoPagamento').addEventListener('change', function() {
+      document.getElementById('dadosCartao').style.display = this.value === 'cartao' ? 'block' : 'none';
+    });
+
+    // Configuração da máscara de valor:
+    // A função prepare apenas filtra os dígitos, e o commit converte o valor em centavos.
+    const valorInput = document.getElementById('valor');
+	valorInput.value = "0,00";
+    const valorMask = IMask(valorInput, {
+      mask: Number,
+      scale: 2,             
+      signed: false,
+      thousandsSeparator: '.',
+      padFractionalZeros: true,
+      normalizeZeros: true,
+      radix: ',',
+      mapToRadix: ['.'],
+      prepare: (value) => {
+        // Remove tudo que não for dígito
+        return value.replace(/\D/g, '');
+      },
+      commit: (value, masked) => {
+        // Converte o valor "cru" (string de dígitos) para número e divide por 100
+        masked._value = (parseInt(masked.unmaskedValue, 10) / 100).toFixed(2);
+      }
+    });
+	
+	valorInput.addEventListener('input', function () {
+    let unmaskedValue = valorMask.unmaskedValue; // Pega apenas os números sem formatação
+    if (unmaskedValue.length === 0) {
+      valorMask.value = '0,00'; // Se vazio, coloca o valor padrão
+      return;
+    }
+    
+    // Converte para um número decimal correto (centavos)
+    let numericValue = (parseInt(unmaskedValue, 10) / 100).toFixed(2);
+    valorMask.value = numericValue.replace('.', ','); // Atualiza a máscara com formato correto
+  });
+
+    document.getElementById('formPagamento').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      // Limpa mensagens de erro anteriores
+      document.getElementById('erroValor').style.display = 'none';
+      document.getElementById('erroDescricao').style.display = 'none';
+      document.getElementById('erroCliente').style.display = 'none';
+
+      let valid = true;
+
+      // Obtém o valor final convertendo o valor formatado para número
+      const valorFinal = Number(valorInput.value.replace(/\./g, '').replace(',', '.'));
+      if (!valorFinal || valorFinal <= 0) {
+        document.getElementById('erroValor').style.display = 'block';
+        valid = false;
+      }
+
+      // Validação dos campos "Descrição" e "Cliente"
+      const descricaoValue = document.getElementById('descricao').value.trim();
+      const clienteValue = document.getElementById('cliente').value.trim();
+      if (!descricaoValue) {
+        document.getElementById('erroDescricao').style.display = 'block';
+        valid = false;
+      }
+      if (!clienteValue) {
+        document.getElementById('erroCliente').style.display = 'block';
+        valid = false;
+      }
+      if (!valid) return;
+
+      const metodo = document.getElementById('metodoPagamento').value;
+      const dados = {
+        valor: valorFinal,
+        descricao: descricaoValue,
+        cliente: clienteValue
+      };
+      if (metodo === 'cartao') {
+        dados.cartao = {
+          numero: document.getElementById('numeroCartao').value,
+          nome: document.getElementById('nomeTitular').value,
+          validade: document.getElementById('validadeCartao').value,
+          codigoSeguranca: document.getElementById('codigoSeguranca').value
+        };
+      }
+      const response = await fetch(`/api/pagamento/${metodo}`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(dados)
+      });
+      const result = await response.json();
+      const resultadoDiv = document.getElementById('resultado');
+
+      if (!response.ok) {
+        let mensagemErro = 'Erro na validação';
+        if (result.erros && Array.isArray(result.erros)) {
+          const erroValor = result.erros.find(err => err.param === 'valor');
+          if (erroValor) mensagemErro = erroValor.msg;
+        } else if (result.mensagem) {
+          mensagemErro = result.mensagem;
+        }
+        resultadoDiv.innerHTML = `<span style="color:red;">${mensagemErro}</span>`;
+      } else {
+        resultadoDiv.innerHTML = `<span style="color:green;">${JSON.stringify(result, null, 2)}</span>`;
+      }
+    });
+  </script>
+</body>
+</html>

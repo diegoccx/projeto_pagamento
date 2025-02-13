@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Pagamentos Perfec Pay</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  
+  <script src="https://unpkg.com/imask"></script>
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+  <div class="container mt-4">
+    <h1>Pagamentos</h1>
+    <form id="formPagamento" novalidate>
+      <div class="form-group">
+        <label for="metodoPagamento">Método de Pagamento</label>
+        <select class="form-control" id="metodoPagamento" name="metodoPagamento">
+          <option value="boleto">Boleto</option>
+          <option value="cartao">Cartão de Crédito</option>
+          <option value="pix">Pix</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="valor">Valor</label>
+        
+        <input type="text" class="form-control" id="valor" name="valor" required>
+        <small id="erroValor" class="text-danger" style="display:none;">Campo Valor obrigatório e deve ser maior que zero</small>
+      </div>
+      <div class="form-group">
+        <label for="descricao">Descrição</label>
+        <input type="text" class="form-control" id="descricao" name="descricao" required>
+        <small id="erroDescricao" class="text-danger" style="display:none;">Campo descrição obrigatório</small>
+      </div>
+      <div class="form-group">
+        <label for="cliente">Cliente</label>
+        <input type="text" class="form-control" id="cliente" name="cliente" required>
+        <small id="erroCliente" class="text-danger" style="display:none;">Campo cliente obrigatório</small>
+      </div>
+      <div id="dadosCartao" style="display: none;">
+    <h5>Dados do Cartão</h5>
+    <div class="form-group">
+        <label for="numeroCartao">Número do Cartão</label>
+        <input type="text" class="form-control" id="numeroCartao" name="creditCard.numero" required>
+        <small id="erroNumeroCartao" class="text-danger" style="display:none;">Campo obrigatório e Sem letras</small>
+    </div>
+    <div class="form-group">
+        <label for="nomeTitular">Nome do Titular</label>
+        <input type="text" class="form-control" id="nomeTitular" name="creditCard.nome" required>
+        <small id="erroNomeTitular" class="text-danger" style="display:none;">Campo obrigatório</small>
+    </div>
+    <div class="form-group">
+        <label for="validadeCartao">Validade (MM/AA)</label>
+        <input type="text" class="form-control" id="validadeCartao" name="creditCard.validade" required>
+        <small id="erroValidadeCartao" class="text-danger" style="display:none;">Formato inválido (MM/AA)</small>
+    </div>
+    <div class="form-group">
+        <label for="codigoSeguranca">Código de Segurança</label>
+        <input type="text" class="form-control" id="codigoSeguranca" name="creditCard.codigoSeguranca" required>
+        <small id="erroCodigoSeguranca" class="text-danger" style="display:none;">Campo obrigatório</small>
+    </div>
+    <div class="form-group">
+        <label for="cpf">CPF/CNPJ do Titular</label>
+        <input type="text" class="form-control" id="cpf" name="creditCardHolderInfo.cpfCnpj" required>
+        <small id="erroCpf" class="text-danger" style="display:none;">Campo CPF Vazio ou Inválido</small>
+    </div>
+</div>
+      <button type="submit" class="btn btn-primary">Pagar</button>
+    </form>
+    <div id="resultado" class="mt-3"></div>
+  </div>
+  <script>
+   
+    document.getElementById('metodoPagamento').addEventListener('change', function() {
+      document.getElementById('dadosCartao').style.display = this.value === 'cartao' ? 'block' : 'none';
+    });
+
+    
+    const valorInput = document.getElementById('valor');
+	valorInput.value = "0,00";
+    const valorMask = IMask(valorInput, {
+      mask: Number,
+      scale: 2,             
+      signed: false,
+      thousandsSeparator: '.',
+      padFractionalZeros: true,
+      normalizeZeros: true,
+      radix: ',',
+      mapToRadix: ['.'],
+      prepare: (value) => {
+       
+        return value.replace(/\D/g, '');
+      },
+      commit: (value, masked) => {
+        
+        masked._value = (parseInt(masked.unmaskedValue, 10) / 100).toFixed(2);
+		
+      }
+    });
+	
+	valorInput.addEventListener('input', function () {
+    let unmaskedValue = valorMask.unmaskedValue; 
+    if (unmaskedValue.length === 0) {
+      valorMask.value = '0,00'; 
+      return;
+    }
+    
+   
+    let numericValue = (parseInt(unmaskedValue, 10) / 100).toFixed(2);
+    valorMask.value = numericValue.replace('.', ','); // Atualiza a máscara com formato correto
+  });
+
+  document.getElementById('formPagamento').addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  
+  document.getElementById('erroValor').style.display = 'none';
+  document.getElementById('erroDescricao').style.display = 'none';
+  document.getElementById('erroCliente').style.display = 'none';
+  
+ 
+  
+  
+ 
+  
+  
+  
+  
+
+  let valid = true;
+
+  
+  const valorFinal = Number(valorInput.value.replace(/\./g, '').replace(',', '.'));
+  if (!valorFinal || valorFinal <= 0) {
+    document.getElementById('erroValor').style.display = 'block';
+    valid = false;
+  }
+
+  
+  const descricaoValue = document.getElementById('descricao').value.trim();
+  const clienteValue = document.getElementById('cliente').value.trim();
+  if (!descricaoValue) {
+    document.getElementById('erroDescricao').style.display = 'block';
+    valid = false;
+  }
+  if (!clienteValue) {
+    document.getElementById('erroCliente').style.display = 'block';
+    valid = false;
+  }
+  if (!valid) return;
+
+  const metodo = document.getElementById('metodoPagamento').value;
+  var dados = {
+    valor: valorFinal/100,
+    descricao: descricaoValue,
+    cliente: clienteValue
+  };
+  if (metodo === 'cartao') {
+     dados = {
+        valor: valorFinal/100,
+        descricao: document.getElementById('descricao').value,
+        cliente: document.getElementById('cliente').value,
+        creditCard: {
+          numero: document.getElementById('numeroCartao').value,
+          nome: document.getElementById('nomeTitular').value,
+          validade: document.getElementById('validadeCartao').value,
+          codigoSeguranca: document.getElementById('codigoSeguranca').value
+        },
+        creditCardHolderInfo: {
+          cpfCnpj: document.getElementById('cpf').value
+        }
+      };
+	  
+	  const numeroCartao = document.getElementById('numeroCartao').value.trim();
+        const nomeTitular = document.getElementById('nomeTitular').value.trim();
+        const validadeCartao = document.getElementById('validadeCartao').value.trim();
+        const codigoSeguranca = document.getElementById('codigoSeguranca').value.trim();
+        const cpfCnpj = document.getElementById('cpf').value.trim();
+
+        if (!numeroCartao || !/^\d+$/.test(numeroCartao)) {
+    document.getElementById('erroNumeroCartao').style.display = 'block';
+    valid = false;
+} else {
+    document.getElementById('erroNumeroCartao').style.display = 'none';
+}
+
+        if (!nomeTitular) {
+            document.getElementById('erroNomeTitular').style.display = 'block';
+            valid = false;
+        }
+       
+        if (!codigoSeguranca) {
+            document.getElementById('erroCodigoSeguranca').style.display = 'block';
+            valid = false;
+        }
+      
+if (!validadeCartao || !/^\d{2}\/\d{2}$/.test(validadeCartao)) {
+    document.getElementById('erroValidadeCartao').style.display = 'block';
+    valid = false;
+} else {
+    const [mes, ano] = validadeCartao.split('/').map(num => parseInt(num, 10));
+    if (mes < 1 || mes > 12) {
+        document.getElementById('erroValidadeCartao').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('erroValidadeCartao').style.display = 'none';
+    }
+}
+
+
+function validarCPF(cpf) {
+    cpf = cpf.replace(/[^\d]/g, ''); 
+    if (cpf.length !== 11 || /^(\d)\1{10}$/.test(cpf)) return false; 
+
+    let soma = 0, resto;
+    for (let i = 1; i <= 9; i++) soma += parseInt(cpf[i - 1]) * (11 - i);
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf[9])) return false;
+
+    soma = 0;
+    for (let i = 1; i <= 10; i++) soma += parseInt(cpf[i - 1]) * (12 - i);
+    resto = (soma * 10) % 11;
+    if (resto === 10 || resto === 11) resto = 0;
+    if (resto !== parseInt(cpf[10])) return false;
+
+    return true;
+}
+
+
+if (!cpfCnpj || !validarCPF(cpfCnpj)) {
+    document.getElementById('erroCpf').style.display = 'block';
+    valid = false;
+} else {
+    document.getElementById('erroCpf').style.display = 'none';
+}
+
+	   
+		if (!valid) return;
+  }
+  
+  const response = await fetch(`/api/pagamento/${metodo}`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(dados)
+  });
+  const result = await response.json();
+  const resultadoDiv = document.getElementById('resultado');
+  
+
+if (!response.ok) {
+      let mensagemErro = 'Erro ao processar pagamento.';
+      // Verifica se há mensagem de erro retornada pelo servidor
+      if (result.erro) {
+        mensagemErro ="Erro no processamento do pagamento:"+ result.erro;
+      } else if (result.errors && result.errors.length > 0) {
+        mensagemErro = result.errors[0].description;
+      }
+
+      // Configura o tooltip com a mensagem de erro detalhada
+    $('#resultado')
+    .removeClass()  // Remove classes anteriores se necessário
+    .addClass('mt-3 alert alert-danger')
+    .html(mensagemErro);
+} else {
+  $('#resultado').removeClass().addClass('mt-3 alert alert-success').html('Pagamento processado com sucesso!');
+  window.location.href = result.boletoUrl;
+}
+
+
+  
+  
+});
+function limparErro(idErro) {
+  document.getElementById(idErro).style.display = 'none';
+}
+
+// Adiciona evento de entrada nos campos do cartão
+document.getElementById('numeroCartao').addEventListener('input', () => limparErro('erroNumeroCartao'));
+document.getElementById('nomeTitular').addEventListener('input', () => limparErro('erroNomeTitular'));
+document.getElementById('validadeCartao').addEventListener('input', () => limparErro('erroValidadeCartao'));
+document.getElementById('codigoSeguranca').addEventListener('input', () => limparErro('erroCodigoSeguranca'));
+document.getElementById('cpf').addEventListener('input', () => limparErro('erroCpf'));
+
+
+  </script>
+</body>
+</html>
