@@ -74,7 +74,7 @@ Para verificar a cobertura de código (meta de 80% ou mais):
 ![Banco de Dados](public/img/db.png)
 
 
-Tabela de Pagamentos:
+##Tabela de Pagamentos:
 ```
   CREATE TABLE pagamentos (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -88,7 +88,7 @@ Tabela de Pagamentos:
   ```
   ![Tabela pagamentos](public/img/tabela_pagamentos.png)
 
-Tabela de Logs:
+##Tabela de Logs:
 ```
   CREATE TABLE logs (
     id INT PRIMARY KEY AUTO_INCREMENT,
@@ -96,45 +96,48 @@ Tabela de Logs:
     mensagem TEXT NOT NULL,
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
-  
+   ```
 
 
-    ```
+    
 	  ![Tabela Logs](public/img/tabela_logs.png)
   
 
  
 
-  <!-- Seção 4: Execução da Aplicação -->
+
  
    # 4. Execução da Aplicação
-    ```
+   
 Para iniciar a aplicação:
   1. Inicie o servidor:
+   ```
        $ npm start
+	    ```
   2. Acesse a aplicação via navegador em:
+   ```
        http://localhost:3000
     ```
   
 
  
 
-  <!-- Seção 5: Funcionalidades e Fluxos de Pagamento -->
+  
  
     # 5. Funcionalidades e Fluxos de Pagamento
-  ```
-Pix:
+ 
+##Pix:
   - Gera código Pix/QR Code
   - Registra o pagamento com status "pendente"
   - Atualiza o status para "concluído" após confirmação
 
-Cartão de Crédito:
+##Cartão de Crédito:
   - Valida os dados do cartão
   - Processa a cobrança
   - Atualiza o status conforme o resultado da transação
     (Consulte public/img/ERRO_CARTAO.png para exemplo de erro)
 
-Boleto:
+##Boleto:
   - Gera código de barras
   - Registra o pagamento com status "pendente"
   - Confirma o pagamento após compensação
@@ -143,7 +146,7 @@ Boleto:
 
  
 
-  <!-- Seção 6: Exemplo de Uso da API -->
+  
   
    # 6. Exemplo de Uso da API
    ```
@@ -170,7 +173,7 @@ Resposta:
 
  
 
-  <!-- Seção 7: Testes e Cobertura -->
+ 
   
     # 7. Testes e Cobertura de Código
 	  ![Cobertura](public/img/cobertura.png)
@@ -187,8 +190,6 @@ Visualize a cobertura: public/img/cobertura.png (400px de largura)
 
   
 
-  <!-- Seção 8: Dados Armazenados -->
- 
    #8. Dados Armazenados
    ```
 Exemplo de registros armazenados:
@@ -205,30 +206,30 @@ Tabela de Logs:
   
   
 
-  <!-- Seção 10: Considerações Finais -->
+  
  
  ##  10. Considerações
--Organização Visual:
--Seções bem definidas com ícones e badges
--Hierarquia clara de títulos para facilitar a navegação
--Fluxo Lógico e Técnica:
--Passo-a-passo detalhado desde a instalação até a execução
--Instruções específicas para configuração do ambiente e banco de dados
--Formatação de Código:
--Blocos de código com syntax highlighting
--Exemplos práticos e claros do uso da API
--Documentação Técnica:
--Detalhamento completo das funcionalidades e fluxos de pagamento
--Explicações didáticas para cada etapa do processo
--Elementos Visuais:
--Imagens, badges e links interativos para melhorar a experiência do usuário
--Design responsivo e acessível
--Facilidade de Uso:
--Comandos e instruções copiáveis para facilitar a execução
--Seção de troubleshooting com exemplos de erros comuns
+- Organização Visual:
+- Seções bem definidas com ícones e badges
+- Hierarquia clara de títulos para facilitar a navegação
+- Fluxo Lógico e Técnica:
+- Passo-a-passo detalhado desde a instalação até a execução
+- Instruções específicas para configuração do ambiente e banco de dados
+- Formatação de Código:
+- Blocos de código com syntax highlighting
+- Exemplos práticos e claros do uso da API
+- Documentação Técnica:
+- Detalhamento completo das funcionalidades e fluxos de pagamento
+- Explicações didáticas para cada etapa do processo
+- Elementos Visuais:
+- Imagens, badges e links interativos para melhorar a experiência do usuário
+- Design responsivo e acessível
+- Facilidade de Uso:
+- Comandos e instruções copiáveis para facilitar a execução
+- Seção de troubleshooting com exemplos de erros comuns
 
  
-  <!-- Seção 11: Explicações Técnicas Adicionais -->
+  
  
     #11. Explicações Técnicas Adicionais#
     
