@@ -276,20 +276,17 @@ Resposta:
  
   
 # 7. Testes e Cobertura de Código
-	  ![Cobertura](public/img/cobertura.png)
+
+![Cobertura](public/img/cobertura.png)
    
 1. Para testar a aplicação, execute:
-``` 
+<pre><code>
  $ npm test
-```
- ```
-  ```
+</code></pre>
 2. Para verificar a cobertura de código (meta de 80% ou mais):
-  ```
+<pre><code>
   $ npm run coverage
-```
- ```
-  ```
+</code></pre>
   
 
   
