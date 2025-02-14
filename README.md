@@ -50,7 +50,7 @@ cd projeto_pagamento
   <code><pre> $ npm install
    </code></pre>
    
-  <section id="testing">
+ 
     <h2>3.2.1 Configuração do Arquivo .env</h2>
 	  ![Cobertura](public/img/env.png)
     <pre><code>
@@ -63,7 +63,7 @@ Para verificar a cobertura de código (meta de 80% ou mais):
 
 Visualize a cobertura: public/img/cobertura.png (400px de largura)
     </code></pre>
-  </section>  
+  
 
 3.3 Configurando o Banco de Dados:
   • Crie um banco de dados MySQL.
