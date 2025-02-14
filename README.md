@@ -52,8 +52,10 @@ cd projeto_pagamento
    
  
 #   3.2.1 Configuração do Arquivo .env
-	  ![Cobertura](public/img/env.png)
-    <pre><code>
+
+![Cobertura](public/img/env.png)
+    
+	
 - Para testar a integração com a API do Asaas, crie uma conta no Asaas Sandbox:
       • Acesse: https://sandbox.asaas.com/ e registre-se.
       • Após o cadastro, vá até "Configuração de Conta -> Integrações" para obter sua API Key de Sandbox.
@@ -61,8 +63,8 @@ cd projeto_pagamento
 Para verificar a cobertura de código (meta de 80% ou mais):
   $ npm run coverage
 
-Visualize a cobertura: public/img/cobertura.png (400px de largura)
-    </code></pre>
+![Cobertura](public/img/cobertura.png)
+   
   
 
 3.3 Configurando o Banco de Dados:
