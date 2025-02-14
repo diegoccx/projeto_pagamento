@@ -16,7 +16,7 @@ Solução completa para processar pagamentos via **Pix**, **Cartão de Crédito*
 
   <!-- Seção 1: Visão Geral -->
   
-    #1. Visão Geral#
+    ###1. Visão Geral#
     
 A aplicação foi desenvolvida para oferecer uma solução completa para o processamento de pagamentos.
 Principais características:
@@ -31,7 +31,7 @@ Principais características:
 
   
 
-   ## 🚀 Começando
+ 
 
 ### Pré-requisitos
 - Node.js v14+
@@ -207,25 +207,25 @@ Tabela de Logs:
 
   <!-- Seção 10: Considerações Finais -->
  
- #  10. Considerações
-•Organização Visual:
-•Seções bem definidas com ícones e badges
-•Hierarquia clara de títulos para facilitar a navegação
-•Fluxo Lógico e Técnica:
-•Passo-a-passo detalhado desde a instalação até a execução
-•Instruções específicas para configuração do ambiente e banco de dados
-•Formatação de Código:
-•Blocos de código com syntax highlighting
-•Exemplos práticos e claros do uso da API
-•Documentação Técnica:
-•Detalhamento completo das funcionalidades e fluxos de pagamento
-•Explicações didáticas para cada etapa do processo
-•Elementos Visuais:
-•Imagens, badges e links interativos para melhorar a experiência do usuário
-•Design responsivo e acessível
-•Facilidade de Uso:
-•Comandos e instruções copiáveis para facilitar a execução
-•Seção de troubleshooting com exemplos de erros comuns
+ ##  10. Considerações
+-Organização Visual:
+-Seções bem definidas com ícones e badges
+-Hierarquia clara de títulos para facilitar a navegação
+-Fluxo Lógico e Técnica:
+-Passo-a-passo detalhado desde a instalação até a execução
+-Instruções específicas para configuração do ambiente e banco de dados
+-Formatação de Código:
+-Blocos de código com syntax highlighting
+-Exemplos práticos e claros do uso da API
+-Documentação Técnica:
+-Detalhamento completo das funcionalidades e fluxos de pagamento
+-Explicações didáticas para cada etapa do processo
+-Elementos Visuais:
+-Imagens, badges e links interativos para melhorar a experiência do usuário
+-Design responsivo e acessível
+-Facilidade de Uso:
+-Comandos e instruções copiáveis para facilitar a execução
+-Seção de troubleshooting com exemplos de erros comuns
 
  
   <!-- Seção 11: Explicações Técnicas Adicionais -->
