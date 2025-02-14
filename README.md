@@ -85,19 +85,22 @@ Tabela de Pagamentos:
     data_conclusao TIMESTAMP,
     descricao VARCHAR(255)
   );
+  </code></pre>
   ![Tabela pagamentos](public/img/pagamentos.png)
 
 Tabela de Logs:
+<code><pre>
   CREATE TABLE logs (
     id INT PRIMARY KEY AUTO_INCREMENT,
     tipo_log ENUM('info', 'erro', 'alerta') NOT NULL,
     mensagem TEXT NOT NULL,
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
-    ![Tabela Logs](public/img/logs.png)
+  
 
 
     </code></pre>
+	  ![Tabela Logs](public/img/logs.png)
   </section>
 
   <hr>
