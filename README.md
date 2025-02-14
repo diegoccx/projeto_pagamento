@@ -1,21 +1,15 @@
+# 💳 Aplicação de Pagamento 
 
-  <title>💳 Aplicação de Pagamento - Documentação Técnica</title>
- 
+![License](https://img.shields.io/badge/license-MIT-blue) 
+![Test Coverage](https://img.shields.io/badge/coverage-80%25-green)
+![Status](https://img.shields.io/badge/status-active-success)
 
-    <h1>💳 Aplicação de Pagamento</h1>
-    <div>
-      <img class="badge" src="https://img.shields.io/badge/license-MIT-blue" alt="License">
-      <img class="badge" src="https://img.shields.io/badge/coverage-80%25-green" alt="Test Coverage">
-      <img class="badge" src="https://img.shields.io/badge/status-active-success" alt="Status">
-    </div>
-    <pre><code>
-Esta aplicação permite processar pagamentos utilizando métodos modernos como:
-  - Pix
-  - Cartão de Crédito
-  - Boleto
+Solução completa para processar pagamentos via **Pix**, **Cartão de Crédito** e **Boleto**, com registro de transações e sistema de logs para auditoria.
 
-Ela registra todas as transações realizadas e gera logs detalhados para auditoria e análise.
-    </code></pre>
+![Interface de Pagamento](public/img/pagamentos.png)
+![Versão Mobile](public/img/responsivo.png)
+
+## 🚀 Começando
   
 
   <hr>
@@ -30,10 +24,7 @@ Principais características:
   • Registro detalhado de transações e logs para auditoria
   • Interface responsiva e intuitiva
 
-Exemplos de interface:
-  • Interface de Pagamento: public/img/pagamentos.png (400px de largura)
-  • Versão Mobile: public/img/responsivo.png (200px de largura)
-    </code></pre>
+
   </section>
 
   <hr>
