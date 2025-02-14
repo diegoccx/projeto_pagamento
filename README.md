@@ -17,7 +17,7 @@ Solução completa para processar pagamentos via **Pix**, **Cartão de Crédito*
   <!-- Seção 1: Visão Geral -->
   <section id="overview">
     <h2>1. Visão Geral</h2>
-    <pre><code>
+   
 A aplicação foi desenvolvida para oferecer uma solução completa para o processamento de pagamentos.
 Principais características:
   • Processamento de diversos métodos de pagamento
@@ -32,12 +32,12 @@ Principais características:
   
 
     <h2>2. Pré-requisitos</h2>
-    <pre><code>
+  
 Antes de começar, certifique-se de ter instalado:
   • Node.js (v14 ou superior)
   • npm (v6 ou superior)
   • MySQL (ou outro banco de dados compatível)
-    </code></pre>
+    
  
 
 
