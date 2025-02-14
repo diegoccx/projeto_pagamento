@@ -164,30 +164,16 @@ cd projeto_pagamento</code></pre>
 
   <hr>
 
-  <!-- Seção 5: Funcionalidades -->
+  <!-- Seção 5: Funcionalidades (Resumo) -->
   <section id="functionalities">
-    <h2>5. Funcionalidades e Fluxos de Pagamento</h2>
-    
-    <h3>5.1 Pagamento via Pix</h3>
+    <h2>5. Funcionalidades</h2>
+    <p>
+      A aplicação integra os principais métodos de pagamento, permitindo:
+    </p>
     <ul>
-      <li>Gera código Pix/QR Code</li>
-      <li>Registra o pagamento com status <em>pendente</em></li>
-      <li>Atualiza o status para <em>concluído</em> após confirmação</li>
-    </ul>
-    
-    <h3>5.2 Pagamento via Cartão de Crédito</h3>
-    <ul>
-      <li>Valida os dados do cartão</li>
-      <li>Processa a cobrança</li>
-      <li>Atualiza o status conforme o resultado da transação</li>
-    </ul>
-    <img src="public/img/ERRO_CARTAO.png" alt="Exemplo de Erro no Cartão" width="400">
-    
-    <h3>5.3 Pagamento via Boleto</h3>
-    <ul>
-      <li>Gera código de barras</li>
-      <li>Registra o pagamento com status <em>pendente</em></li>
-      <li>Confirma o pagamento após compensação</li>
+      <li><strong>Pix:</strong> Geração automática de código QR para pagamentos rápidos.</li>
+      <li><strong>Cartão de Crédito:</strong> Validação e processamento seguro dos dados do cartão.</li>
+      <li><strong>Boleto:</strong> Emissão de boletos com acompanhamento do status de compensação.</li>
     </ul>
   </section>
 
@@ -258,7 +244,7 @@ Content-Type: application/json
 
   <!-- Seção 10: Considerações Finais -->
   <section id="improvements">
-    <h2>10. Principais Melhorias e Considerações</h2>
+    <h2>10. Considerações Finais</h2>
     <ol>
       <li>
         <strong>Organização Visual:</strong>
@@ -284,7 +270,7 @@ Content-Type: application/json
       <li>
         <strong>Documentação Técnica:</strong>
         <ul>
-          <li>Detalhamento completo das funcionalidades e fluxos de pagamento</li>
+          <li>Detalhamento completo das funcionalidades sem exibir marcações desnecessárias</li>
           <li>Explicações didáticas para cada etapa do processo</li>
         </ul>
       </li>
