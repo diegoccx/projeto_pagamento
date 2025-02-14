@@ -9,14 +9,14 @@ Solução completa para processar pagamentos via **Pix**, **Cartão de Crédito*
 ![Interface de Pagamento](public/img/pagamentos.png)
 ![Versão Mobile](public/img/responsivo.png)
 
-## 🚀 Começando
+
   
 
  
 
-  <!-- Seção 1: Visão Geral -->
   
-    ###1. Visão Geral#
+  
+    ## 1. Visão Geral
     
 - A aplicação foi desenvolvida para oferecer uma solução completa para o processamento de pagamentos.
 Principais características:
