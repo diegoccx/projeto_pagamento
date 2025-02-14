@@ -81,7 +81,10 @@ Validação e Salvamento de Dados:
 - Tratamento de erros e armazenamento de logs.
 - Esse fluxo permite que a aplicação realize transações financeiras com diferentes métodos de pagamento e tenha um sistema robusto de validação e persistência de dados.  
 
-  
+ ##MENSAGEM erro
+- Mostra os detalhes do erro ao realizar uma operação.
+
+![ERROR](public/img/ERRO_CARTAO.png)   
 
   
 
@@ -196,10 +199,7 @@ Para iniciar a aplicação:
   - Registra o pagamento com status "pendente"
   - Confirma o pagamento após compensação
    
-##MENSAGEM erro
-- Mostra os detalhes do erro ao realizar uma operação.
 
-![ERROR](public/img/ERROR_CARTAO.png)  
 
  
 
