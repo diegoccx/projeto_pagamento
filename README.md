@@ -25,12 +25,12 @@ Principais características:
   • Interface responsiva e intuitiva
 
 
-  </section>
+  
 
-  <hr>
+  
 
-  <!-- Seção 2: Pré-requisitos -->
-  <section id="requirements">
+  
+
     <h2>2. Pré-requisitos</h2>
     <pre><code>
 Antes de começar, certifique-se de ter instalado:
@@ -38,9 +38,9 @@ Antes de começar, certifique-se de ter instalado:
   • npm (v6 ou superior)
   • MySQL (ou outro banco de dados compatível)
     </code></pre>
-  </section>
+ 
 
-  <hr>
+
 
   <!-- Seção 3: Instalação e Configuração -->
   <section id="installation">
