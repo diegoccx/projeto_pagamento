@@ -346,7 +346,7 @@ Resposta:
       https://asaasv3.docs.apiary.io/#
     para mais detalhes sobre os endpoints e parâmetros.
    
- #12. TESTES E POSTMAN# 
+   #12. TESTES E POSTMAN 
 1. Para testar essa aplicação com Cypress e Postman, vamos seguir dois caminhos: um para testes automatizados usando Cypress (para testes de front-end) e outro para testar a API diretamente no Postman.
 
 2. Testes no Cypress
