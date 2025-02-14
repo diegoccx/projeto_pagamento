@@ -106,7 +106,7 @@ Tabela de Logs:
  
 
   <!-- Seção 4: Execução da Aplicação -->
-  <section id="execution">
+ 
     <h2>4. Execução da Aplicação</h2>
     <pre><code>
 Para iniciar a aplicação:
@@ -115,12 +115,12 @@ Para iniciar a aplicação:
   2. Acesse a aplicação via navegador em:
        http://localhost:3000
     </code></pre>
-  </section>
+  
 
  
 
   <!-- Seção 5: Funcionalidades e Fluxos de Pagamento -->
-  <section id="functionalities">
+ 
     <h2>5. Funcionalidades e Fluxos de Pagamento</h2>
     <pre><code>
 Pix:
@@ -139,12 +139,12 @@ Boleto:
   - Registra o pagamento com status "pendente"
   - Confirma o pagamento após compensação
     </code></pre>
-  </section>
+  
 
  
 
   <!-- Seção 6: Exemplo de Uso da API -->
-  <section id="api-usage">
+  
     <h2>6. Exemplo de Uso da API</h2>
     <pre><code>
 Requisição (HTTP POST):
@@ -166,12 +166,12 @@ Resposta:
     "data_criacao": "2025-02-13T14:00:00Z"
   }
     </code></pre>
-  </section>
+  
 
  
 
   <!-- Seção 7: Testes e Cobertura -->
-  <section id="testing">
+  
     <h2>7. Testes e Cobertura de Código</h2>
 	  ![Cobertura](public/img/cobertura.png)
     <pre><code>
@@ -183,12 +183,12 @@ Para verificar a cobertura de código (meta de 80% ou mais):
 
 Visualize a cobertura: public/img/cobertura.png (400px de largura)
     </code></pre>
-  </section>
+  
 
   
 
   <!-- Seção 8: Dados Armazenados -->
-  <section id="data-storage">
+ 
     <h2>8. Dados Armazenados</h2>
     <pre><code>
 Exemplo de registros armazenados:
@@ -199,12 +199,12 @@ Tabela de Pagamentos:
 Tabela de Logs:
   [Imagem: Registros de Logs] (public/img/tabela_logs.png)
     </code></pre>
-  </section>
+  
 
  
 
   <!-- Seção 9: Licença -->
-  <section id="license">
+ 
     <h2>9. Licença</h2>
     <pre><code>
 Este projeto está licenciado sob a MIT License.
@@ -214,12 +214,11 @@ Links:
   - Reportar Bug
   - Solicitar Feature
     </code></pre>
-  </section>
-
+  
   
 
   <!-- Seção 10: Considerações Finais -->
- <section id="improvements">
+ 
     <h2>10. Considerações</h2>
     <ol>
       <li>
@@ -265,11 +264,11 @@ Links:
         </ul>
       </li>
     </ol>
-  </section>
+ 
 
  
   <!-- Seção 11: Explicações Técnicas Adicionais -->
-  <section id="technical-explanations">
+ 
     <h2>11. Explicações Técnicas Adicionais</h2>
     
 
@@ -284,5 +283,5 @@ Links:
       https://asaasv3.docs.apiary.io/#
     para mais detalhes sobre os endpoints e parâmetros.
    
-  </section>
+  
 
