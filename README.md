@@ -346,5 +346,128 @@ Resposta:
       https://asaasv3.docs.apiary.io/#
     para mais detalhes sobre os endpoints e parâmetros.
    
-  
+ #12. TESTES E POSTMAN# 
+1. Para testar essa aplicação com Cypress e Postman, vamos seguir dois caminhos: um para testes automatizados usando Cypress (para testes de front-end) e outro para testar a API diretamente no Postman.
+
+2. Testes no Cypress
+Primeiro, para usar o Cypress, instale as dependências necessárias:
+
+
+<pre><code>
+npm install cypress --save-dev
+</code></pre>
+3. Depois, crie a estrutura de pastas para os testes. Crie uma pasta cypress no diretório raiz do projeto, e dentro dela a pasta integration para os testes:
+
+<pre><code>
+project_root/
+│
+├── cypress/
+│   └── integration/
+│       └── pagamentos.spec.js
+</code></pre>
+
+4. Dentro do arquivo pagamentos.spec.js, crie os testes. A seguir está um exemplo de teste para criar um pagamento com boleto:
+<pre><code>
+cypress/integration/pagamentos.spec.js
+
+describe('Teste de Pagamentos', () => {
+  it('Deve criar pagamento de boleto', () => {
+    cy.visit('/'); // Acessa a página inicial (index.html)
+
+    cy.get('input[name="valor"]').type('140'); // Insere o valor
+    cy.get('input[name="descricao"]').type('Pagamento de Teste Boleto'); // Insere a descrição
+    cy.get('input[name="cliente"]').type('cus_000006510903'); // Insere o ID do cliente
+
+    // Envia o formulário
+    cy.get('form').submit();
+
+    // Verifica a resposta da API
+    cy.intercept('POST', '/api/pagamento/boleto').as('criarBoleto');
+    cy.wait('@criarBoleto').its('response.statusCode').should('eq', 200); // Verifica se a resposta é 200
+
+    // Valida se a URL do boleto foi retornada
+    cy.get('.boletoUrl').should('contain', 'https://link.boletobancario.com'); // Verifica se a URL do boleto está na página
+  });
+});
+</code></pre>
+5. Passos para rodar o Cypress:
+- No terminal, execute o seguinte comando para abrir a interface do Cypress:
+
+<pre><code>
+npx cypress open
+</code></pre>
+- Clique no teste pagamentos.spec.js para rodá-lo e acompanhar o resultado dos testes.
+
+- Testes no Postman
+Agora, para testar diretamente a API, siga os seguintes passos:
+
+- Abrir o Postman:
+
+- Se você ainda não tem o Postman, baixe e instale o Postman aqui.
+Criar uma nova requisição POST para a rota de pagamento do boleto:
+
+URL: http://localhost:3000/api/pagamento/boleto
+
+Método: POST
+
+Body: Selecione a opção raw e escolha o formato JSON. A seguir, cole o corpo da requisição:
+
+<pre><code>
+{
+  "valor": 140,
+  "descricao": "Pagamento de Teste Boleto",
+  "cliente": "cus_000006510903"
+}
+</code></pre>
+Adicionar Cabeçalhos:
+
+No cabeçalho da requisição, adicione:
+Content-Type: application/json
+access_token: Insira a chave ASAAS_API_KEY do seu arquivo .env (caso esteja usando um token de acesso).
+Testar a API:
+
+Após configurar o body e os cabeçalhos, clique em Send.
+O Postman deverá retornar uma resposta de sucesso com o status 200 OK e, se a requisição for bem-sucedida, o retorno incluirá a URL do boleto gerado.
+Exemplo de resposta:
+
+<pre><code>
+{
+  "mensagem": "Pagamento Boleto gerado com sucesso.",
+  "pagamento": {
+    "id": "pay_0001",
+    "valor": 140,
+    "descricao": "Pagamento de Teste Boleto",
+    "cliente": "cus_000006510903",
+    "tipo": "boleto",
+    "status": "pendente",
+    "boletoUrl": "https://link.boletobancario.com"
+  },
+  "boletoUrl": "https://link.boletobancario.com"
+}
+</code></pre>
+Verificar a resposta:
+
+Verifique no campo de resposta se o pagamento foi criado com sucesso e se o URL do boleto está correto.
+Resumo do Passo a Passo para Postman:
+Configurar a requisição:
+<pre><code>
+Método: POST
+URL: http://localhost:3000/api/pagamento/boleto
+Body (raw JSON):
+json
+Copiar
+Editar
+{
+  "valor": 140,
+  "descricao": "Pagamento de Teste Boleto",
+  "cliente": "cus_000006510903"
+}
+</code></pre>
+- Adicionar cabeçalhos:
+
+- Content-Type: application/json
+- access_token: Seu token de acesso (obtido via .env)
+- Enviar a requisição e verificar se a URL do boleto foi gerada na resposta.
+
+- Com essas etapas, você será capaz de testar tanto a API quanto o front-end da aplicação, utilizando Cypress para testar a interação do usuário e Postman para testar diretamente a API de pagamentos. 
 
