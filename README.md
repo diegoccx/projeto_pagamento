@@ -75,7 +75,7 @@ Para verificar a cobertura de código (meta de 80% ou mais):
 
 
 Tabela de Pagamentos:
-<code><pre>
+```
   CREATE TABLE pagamentos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     valor DECIMAL(10, 2) NOT NULL,
@@ -85,11 +85,11 @@ Tabela de Pagamentos:
     data_conclusao TIMESTAMP,
     descricao VARCHAR(255)
   );
-  </code></pre>
+  ```
   ![Tabela pagamentos](public/img/tabela_pagamentos.png)
 
 Tabela de Logs:
-<code><pre>
+```
   CREATE TABLE logs (
     id INT PRIMARY KEY AUTO_INCREMENT,
     tipo_log ENUM('info', 'erro', 'alerta') NOT NULL,
@@ -99,7 +99,7 @@ Tabela de Logs:
   
 
 
-    </code></pre>
+    ```
 	  ![Tabela Logs](public/img/tabela_logs.png)
   </section>
 
@@ -108,13 +108,13 @@ Tabela de Logs:
   <!-- Seção 4: Execução da Aplicação -->
  
    # 4. Execução da Aplicação
-    <pre><code>
+    ```
 Para iniciar a aplicação:
   1. Inicie o servidor:
        $ npm start
   2. Acesse a aplicação via navegador em:
        http://localhost:3000
-    </code></pre>
+    ```
   
 
  
@@ -122,7 +122,7 @@ Para iniciar a aplicação:
   <!-- Seção 5: Funcionalidades e Fluxos de Pagamento -->
  
     # 5. Funcionalidades e Fluxos de Pagamento
-    <pre><code>
+  ```
 Pix:
   - Gera código Pix/QR Code
   - Registra o pagamento com status "pendente"
@@ -138,7 +138,7 @@ Boleto:
   - Gera código de barras
   - Registra o pagamento com status "pendente"
   - Confirma o pagamento após compensação
-    </code></pre>
+    ```
   
 
  
@@ -146,7 +146,7 @@ Boleto:
   <!-- Seção 6: Exemplo de Uso da API -->
   
    # 6. Exemplo de Uso da API
-    <pre><code>
+   ```
 Requisição (HTTP POST):
   URL: /api/pagamentos
   Headers: Content-Type: application/json
@@ -165,7 +165,7 @@ Resposta:
     "valor": 150.00,
     "data_criacao": "2025-02-13T14:00:00Z"
   }
-    </code></pre>
+    ```
   
 
  
@@ -174,7 +174,7 @@ Resposta:
   
     # 7. Testes e Cobertura de Código
 	  ![Cobertura](public/img/cobertura.png)
-    <pre><code>
+    ```
 Para testar a aplicação, execute:
   $ npm test
 
@@ -182,7 +182,7 @@ Para verificar a cobertura de código (meta de 80% ou mais):
   $ npm run coverage
 
 Visualize a cobertura: public/img/cobertura.png (400px de largura)
-    </code></pre>
+    ```
   
 
   
@@ -190,7 +190,7 @@ Visualize a cobertura: public/img/cobertura.png (400px de largura)
   <!-- Seção 8: Dados Armazenados -->
  
    #8. Dados Armazenados
-    <pre><code>
+   ```
 Exemplo de registros armazenados:
 
 Tabela de Pagamentos:
@@ -198,8 +198,7 @@ Tabela de Pagamentos:
 
 Tabela de Logs:
   [Imagem: Registros de Logs] (public/img/tabela_logs.png)
-    </code></pre>
-  
+    ```
 
  
 
