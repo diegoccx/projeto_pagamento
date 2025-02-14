@@ -12,18 +12,18 @@ Solução completa para processar pagamentos via **Pix**, **Cartão de Crédito*
 ## 🚀 Começando
   
 
-  <hr>
+ 
 
   <!-- Seção 1: Visão Geral -->
-  <section id="overview">
-    <h2>1. Visão Geral</h2>
-    <pre><code>
+  
+    #1. Visão Geral#
+    
 A aplicação foi desenvolvida para oferecer uma solução completa para o processamento de pagamentos.
 Principais características:
   • Processamento de diversos métodos de pagamento
   • Registro detalhado de transações e logs para auditoria
   • Interface responsiva e intuitiva
- </code></pre>
+ 
 
   
 
@@ -101,7 +101,7 @@ Tabela de Logs:
 
     ```
 	  ![Tabela Logs](public/img/tabela_logs.png)
-  </section>
+  
 
  
 
@@ -207,52 +207,25 @@ Tabela de Logs:
 
   <!-- Seção 10: Considerações Finais -->
  
-    #10. Considerações#
-    <ol>
-      <li>
-        <strong>Organização Visual:</strong>
-        <ul>
-          <li>Seções bem definidas com ícones e badges</li>
-          <li>Hierarquia clara de títulos para facilitar a navegação</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Fluxo Lógico e Técnica:</strong>
-        <ul>
-          <li>Passo-a-passo detalhado desde a instalação até a execução</li>
-          <li>Instruções específicas para configuração do ambiente e banco de dados</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Formatação de Código:</strong>
-        <ul>
-          <li>Blocos de código com syntax highlighting</li>
-          <li>Exemplos práticos e claros do uso da API</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Documentação Técnica:</strong>
-        <ul>
-          <li>Detalhamento completo das funcionalidades e fluxos de pagamento</li>
-          <li>Explicações didáticas para cada etapa do processo</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Elementos Visuais:</strong>
-        <ul>
-          <li>Imagens, badges e links interativos para melhorar a experiência do usuário</li>
-          <li>Design responsivo e acessível</li>
-        </ul>
-      </li>
-      <li>
-        <strong>Facilidade de Uso:</strong>
-        <ul>
-          <li>Comandos e instruções copiáveis para facilitar a execução</li>
-          <li>Seção de troubleshooting com exemplos de erros comuns</li>
-        </ul>
-      </li>
-    </ol>
- 
+ #  10. Considerações
+•Organização Visual:
+•Seções bem definidas com ícones e badges
+•Hierarquia clara de títulos para facilitar a navegação
+•Fluxo Lógico e Técnica:
+•Passo-a-passo detalhado desde a instalação até a execução
+•Instruções específicas para configuração do ambiente e banco de dados
+•Formatação de Código:
+•Blocos de código com syntax highlighting
+•Exemplos práticos e claros do uso da API
+•Documentação Técnica:
+•Detalhamento completo das funcionalidades e fluxos de pagamento
+•Explicações didáticas para cada etapa do processo
+•Elementos Visuais:
+•Imagens, badges e links interativos para melhorar a experiência do usuário
+•Design responsivo e acessível
+•Facilidade de Uso:
+•Comandos e instruções copiáveis para facilitar a execução
+•Seção de troubleshooting com exemplos de erros comuns
 
  
   <!-- Seção 11: Explicações Técnicas Adicionais -->
@@ -262,7 +235,7 @@ Tabela de Logs:
 
   
 
-11.2 Integração com o Sandbox Asaas:
+-11.2 Integração com o Sandbox Asaas:
   - Para testar a integração com a API do Asaas, crie uma conta no Asaas Sandbox:
       • Acesse: https://sandbox.asaas.com/ e registre-se.
       • Após o cadastro, vá até "Configuração de Conta -> Integrações" para obter sua API Key de Sandbox.
