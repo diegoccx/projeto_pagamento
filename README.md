@@ -107,7 +107,7 @@ Tabela de Logs:
 
   <!-- Seção 4: Execução da Aplicação -->
  
-    <h2>4. Execução da Aplicação</h2>
+   # 4. Execução da Aplicação
     <pre><code>
 Para iniciar a aplicação:
   1. Inicie o servidor:
@@ -121,7 +121,7 @@ Para iniciar a aplicação:
 
   <!-- Seção 5: Funcionalidades e Fluxos de Pagamento -->
  
-    <h2>5. Funcionalidades e Fluxos de Pagamento</h2>
+    # 5. Funcionalidades e Fluxos de Pagamento
     <pre><code>
 Pix:
   - Gera código Pix/QR Code
@@ -145,7 +145,7 @@ Boleto:
 
   <!-- Seção 6: Exemplo de Uso da API -->
   
-    <h2>6. Exemplo de Uso da API</h2>
+   # 6. Exemplo de Uso da API
     <pre><code>
 Requisição (HTTP POST):
   URL: /api/pagamentos
@@ -172,7 +172,7 @@ Resposta:
 
   <!-- Seção 7: Testes e Cobertura -->
   
-    <h2>7. Testes e Cobertura de Código</h2>
+    # 7. Testes e Cobertura de Código
 	  ![Cobertura](public/img/cobertura.png)
     <pre><code>
 Para testar a aplicação, execute:
@@ -189,7 +189,7 @@ Visualize a cobertura: public/img/cobertura.png (400px de largura)
 
   <!-- Seção 8: Dados Armazenados -->
  
-    <h2>8. Dados Armazenados</h2>
+   #8. Dados Armazenados
     <pre><code>
 Exemplo de registros armazenados:
 
@@ -203,23 +203,12 @@ Tabela de Logs:
 
  
 
-  <!-- Seção 9: Licença -->
- 
-    <h2>9. Licença</h2>
-    <pre><code>
-Este projeto está licenciado sob a MIT License.
-Desenvolvido com ❤️ por Diego
-
-Links:
-  - Reportar Bug
-  - Solicitar Feature
-    </code></pre>
   
   
 
   <!-- Seção 10: Considerações Finais -->
  
-    <h2>10. Considerações</h2>
+    #10. Considerações#
     <ol>
       <li>
         <strong>Organização Visual:</strong>
@@ -269,7 +258,7 @@ Links:
  
   <!-- Seção 11: Explicações Técnicas Adicionais -->
  
-    <h2>11. Explicações Técnicas Adicionais</h2>
+    #11. Explicações Técnicas Adicionais#
     
 
   
