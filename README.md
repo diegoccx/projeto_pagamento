@@ -203,7 +203,7 @@ Para iniciar a aplicação:
   
   
    # 6. Exemplo de Uso da API
-   ```
+ <pre><code>
 Requisição (HTTP POST):
   URL: /api/pagamentos
   Headers: Content-Type: application/json
@@ -267,9 +267,8 @@ Resposta:
   "custody": null,
   "refunds": null
 }
-    ``` 
- ```
- ``` 
+   
+</code></pre>
   
 
  
