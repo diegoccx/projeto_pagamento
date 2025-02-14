@@ -260,31 +260,41 @@ Links:
   <!-- Seção 10: Considerações Finais -->
   <section id="improvements">
     <h2>10. Considerações Finais</h2>
-    <pre><code>
-Organização Visual:
-  - Seções bem definidas com ícones e badges
-  - Hierarquia clara de títulos para facilitar a navegação
+    
+Principais Melhorias e Considerações:
+  • Organização Visual: Seções bem definidas com ícones e badges.
+  • Fluxo Lógico e Técnica: Passo-a-passo detalhado da instalação à execução.
+  • Formatação de Código: Blocos de código com syntax highlighting e exemplos práticos.
+  • Documentação Técnica: Explicações didáticas para cada etapa do processo.
+  • Elementos Visuais: Imagens, badges e links interativos para uma experiência aprimorada.
+  • Facilidade de Uso: Comandos copiáveis e seção de troubleshooting com exemplos de erros.
+   
+  </section>
 
-Fluxo Lógico e Técnica:
-  - Passo-a-passo detalhado desde a instalação até a execução
-  - Instruções específicas para configuração do ambiente e banco de dados
+  <hr>
 
-Formatação de Código:
-  - Blocos de código com syntax highlighting
-  - Exemplos práticos e claros do uso da API
+  <!-- Seção 11: Explicações Técnicas Adicionais -->
+  <section id="technical-explanations">
+    <h2>11. Explicações Técnicas Adicionais</h2>
+    
+11.1 Testes Automatizados e Persistência dos Dados:
+  - Testes Automatizados:
+      • Escrever testes unitários e de integração para as funcionalidades principais garante que o sistema se comporte conforme o esperado.
+      • A cobertura de testes, que deve atingir pelo menos 80%, é fundamental para assegurar a qualidade e robustez do código.
+  - Persistência dos Dados:
+      • Utilizamos um banco de dados relacional (preferencialmente MySQL) para armazenar informações dos pagamentos e logs.
+      • A tabela "pagamentos" registra detalhes essenciais como valor, método, status, datas de criação e conclusão, e descrição.
+      • A tabela "logs" armazena registros de eventos e erros, permitindo auditoria e facilitando a resolução de problemas.
 
-Documentação Técnica:
-  - Detalhamento completo das funcionalidades e fluxos de pagamento
-  - Explicações didáticas para cada etapa do processo
-
-Elementos Visuais:
-  - Imagens, badges e links interativos para melhorar a experiência do usuário
-  - Design responsivo e acessível
-
-Facilidade de Uso:
-  - Comandos e instruções copiáveis para facilitar a execução
-  - Seção de troubleshooting com exemplos de erros comuns
-    </code></pre>
+11.2 Integração com o Sandbox Asaas:
+  - Para testar a integração com a API do Asaas, crie uma conta no Asaas Sandbox:
+      • Acesse: https://sandbox.asaas.com/ e registre-se.
+      • Após o cadastro, vá até "Configuração de Conta -> Integrações" para obter sua API Key de Sandbox.
+  - A API Key é necessária para iniciar a integração e simular transações.
+  - Consulte a documentação oficial do Asaas em:
+      https://asaasv3.docs.apiary.io/#
+    para mais detalhes sobre os endpoints e parâmetros.
+   
   </section>
 </body>
 </html>
