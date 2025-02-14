@@ -16,7 +16,7 @@ Solução completa para processar pagamentos via **Pix**, **Cartão de Crédito*
 
   
   
-    ## 1. Visão Geral
+# 1. Visão Geral
     
 - A aplicação foi desenvolvida para oferecer uma solução completa para o processamento de pagamentos.
 Principais características:
@@ -195,7 +195,7 @@ Para iniciar a aplicação:
   - Gera código de barras
   - Registra o pagamento com status "pendente"
   - Confirma o pagamento após compensação
-    ```
+   
   
 
  
@@ -209,19 +209,64 @@ Requisição (HTTP POST):
   Headers: Content-Type: application/json
   Body:
   {
-    "valor": 150.00,
-    "metodo_pagamento": "pix",
-    "descricao": "Pagamento por produto A"
-  }
+  "billingType": "BOLETO",
+  "customer": "cus_000006510903",
+  "value": 140,
+  "dueDate": "2025-03-03"
+}
 
 Resposta:
   {
-    "id": 12345,
-    "status": "pendente",
-    "metodo_pagamento": "pix",
-    "valor": 150.00,
-    "data_criacao": "2025-02-13T14:00:00Z"
-  }
+  "object": "payment",
+  "id": "pay_6ntu8so0bjerfuiz",
+  "dateCreated": "2025-02-14",
+  "customer": "cus_000006510903",
+  "paymentLink": null,
+  "value": 140,
+  "netValue": 139.01,
+  "originalValue": null,
+  "interestValue": null,
+  "description": null,
+  "billingType": "BOLETO",
+  "canBePaidAfterDueDate": true,
+  "pixTransaction": null,
+  "status": "PENDING",
+  "dueDate": "2025-03-03",
+  "originalDueDate": "2025-03-03",
+  "paymentDate": null,
+  "clientPaymentDate": null,
+  "installmentNumber": null,
+  "invoiceUrl": "https://sandbox.asaas.com/i/6ntu8so0bjerfuiz",
+  "invoiceNumber": "07665783",
+  "externalReference": null,
+  "deleted": false,
+  "anticipated": false,
+  "anticipable": false,
+  "creditDate": null,
+  "estimatedCreditDate": null,
+  "transactionReceiptUrl": null,
+  "nossoNumero": "10615931",
+  "bankSlipUrl": "https://sandbox.asaas.com/b/pdf/6ntu8so0bjerfuiz",
+  "lastInvoiceViewedDate": null,
+  "lastBankSlipViewedDate": null,
+  "discount": {
+    "value": 0,
+    "limitDate": null,
+    "dueDateLimitDays": 0,
+    "type": "FIXED"
+  },
+  "fine": {
+    "value": 0,
+    "type": "FIXED"
+  },
+  "interest": {
+    "value": 0,
+    "type": "PERCENTAGE"
+  },
+  "postalService": false,
+  "custody": null,
+  "refunds": null
+}
     ```
   
 
@@ -229,29 +274,30 @@ Resposta:
 
  
   
-    # 7. Testes e Cobertura de Código
+# 7. Testes e Cobertura de Código
 	  ![Cobertura](public/img/cobertura.png)
-    ```
-Para testar a aplicação, execute:
-  $ npm test
-
-Para verificar a cobertura de código (meta de 80% ou mais):
+   
+1. Para testar a aplicação, execute:
+``` 
+ $ npm test
+```
+2. Para verificar a cobertura de código (meta de 80% ou mais):
+  ```
   $ npm run coverage
-
-Visualize a cobertura: public/img/cobertura.png (400px de largura)
-    ```
-  
+```
 
   
 
-   #8. Dados Armazenados
-   ```
-Exemplo de registros armazenados:
+  
 
-Tabela de Pagamentos:
+#8. Dados Armazenados
+   
+1. Exemplo de registros armazenados:
+
+2. Tabela de Pagamentos:
   [Imagem: Registros de Pagamentos] (public/img/tabela_pagamentos.png)
 
-Tabela de Logs:
+3. Tabela de Logs:
   [Imagem: Registros de Logs] (public/img/tabela_logs.png)
  
 
@@ -290,7 +336,7 @@ Tabela de Logs:
 
   
 
--11.2 Integração com o Sandbox Asaas:
+- Integração com o Sandbox Asaas:
   - Para testar a integração com a API do Asaas, crie uma conta no Asaas Sandbox:
       • Acesse: https://sandbox.asaas.com/ e registre-se.
       • Após o cadastro, vá até "Configuração de Conta -> Integrações" para obter sua API Key de Sandbox.
