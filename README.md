@@ -267,7 +267,9 @@ Resposta:
   "custody": null,
   "refunds": null
 }
-    ```
+    ``` 
+ ```
+ ``` 
   
 
  
@@ -281,11 +283,14 @@ Resposta:
 ``` 
  $ npm test
 ```
+ ```
+  ```
 2. Para verificar a cobertura de código (meta de 80% ou mais):
   ```
   $ npm run coverage
 ```
-
+ ```
+  ```
   
 
   
