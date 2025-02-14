@@ -1,61 +1,7 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <title>💳 Aplicação de Pagamento - Documentação Técnica</title>
-  <style>
-    /* Estilos básicos para uma leitura agradável */
-    body {
-      font-family: Arial, sans-serif;
-      background: #f4f4f4;
-      color: #333;
-      margin: 0;
-      padding: 20px;
-      line-height: 1.6;
-    }
-    header, section {
-      margin-bottom: 40px;
-    }
-    h1, h2 {
-      color: #222;
-      margin-bottom: 10px;
-    }
-    pre {
-      background: #333;
-      color: #f4f4f4;
-      padding: 10px;
-      overflow-x: auto;
-      margin-bottom: 20px;
-      white-space: pre-wrap;
-    }
-    code {
-      font-family: Consolas, monospace;
-    }
-    .badge {
-      margin-right: 10px;
-    }
-    img {
-      margin: 10px 0;
-      max-width: 100%;
-      display: block;
-    }
-    a {
-      color: #0066cc;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    hr {
-      margin: 40px 0;
-      border: none;
-      border-top: 1px solid #ccc;
-    }
-  </style>
-</head>
-<body>
-  <header>
+ 
+
     <h1>💳 Aplicação de Pagamento</h1>
     <div>
       <img class="badge" src="https://img.shields.io/badge/license-MIT-blue" alt="License">
@@ -70,7 +16,7 @@ Esta aplicação permite processar pagamentos utilizando métodos modernos como:
 
 Ela registra todas as transações realizadas e gera logs detalhados para auditoria e análise.
     </code></pre>
-  </header>
+  
 
   <hr>
 
@@ -258,17 +204,52 @@ Links:
   <hr>
 
   <!-- Seção 10: Considerações Finais -->
-  <section id="improvements">
-    <h2>10. Considerações Finais</h2>
-    
-Principais Melhorias e Considerações:
-  • Organização Visual: Seções bem definidas com ícones e badges.
-  • Fluxo Lógico e Técnica: Passo-a-passo detalhado da instalação à execução.
-  • Formatação de Código: Blocos de código com syntax highlighting e exemplos práticos.
-  • Documentação Técnica: Explicações didáticas para cada etapa do processo.
-  • Elementos Visuais: Imagens, badges e links interativos para uma experiência aprimorada.
-  • Facilidade de Uso: Comandos copiáveis e seção de troubleshooting com exemplos de erros.
-   
+ <section id="improvements">
+    <h2>10. Considerações</h2>
+    <ol>
+      <li>
+        <strong>Organização Visual:</strong>
+        <ul>
+          <li>Seções bem definidas com ícones e badges</li>
+          <li>Hierarquia clara de títulos para facilitar a navegação</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Fluxo Lógico e Técnica:</strong>
+        <ul>
+          <li>Passo-a-passo detalhado desde a instalação até a execução</li>
+          <li>Instruções específicas para configuração do ambiente e banco de dados</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Formatação de Código:</strong>
+        <ul>
+          <li>Blocos de código com syntax highlighting</li>
+          <li>Exemplos práticos e claros do uso da API</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Documentação Técnica:</strong>
+        <ul>
+          <li>Detalhamento completo das funcionalidades e fluxos de pagamento</li>
+          <li>Explicações didáticas para cada etapa do processo</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Elementos Visuais:</strong>
+        <ul>
+          <li>Imagens, badges e links interativos para melhorar a experiência do usuário</li>
+          <li>Design responsivo e acessível</li>
+        </ul>
+      </li>
+      <li>
+        <strong>Facilidade de Uso:</strong>
+        <ul>
+          <li>Comandos e instruções copiáveis para facilitar a execução</li>
+          <li>Seção de troubleshooting com exemplos de erros comuns</li>
+        </ul>
+      </li>
+    </ol>
   </section>
 
   <hr>
@@ -277,14 +258,8 @@ Principais Melhorias e Considerações:
   <section id="technical-explanations">
     <h2>11. Explicações Técnicas Adicionais</h2>
     
-11.1 Testes Automatizados e Persistência dos Dados:
-  - Testes Automatizados:
-      • Escrever testes unitários e de integração para as funcionalidades principais garante que o sistema se comporte conforme o esperado.
-      • A cobertura de testes, que deve atingir pelo menos 80%, é fundamental para assegurar a qualidade e robustez do código.
-  - Persistência dos Dados:
-      • Utilizamos um banco de dados relacional (preferencialmente MySQL) para armazenar informações dos pagamentos e logs.
-      • A tabela "pagamentos" registra detalhes essenciais como valor, método, status, datas de criação e conclusão, e descrição.
-      • A tabela "logs" armazena registros de eventos e erros, permitindo auditoria e facilitando a resolução de problemas.
+
+  
 
 11.2 Integração com o Sandbox Asaas:
   - Para testar a integração com a API do Asaas, crie uma conta no Asaas Sandbox:
@@ -296,5 +271,4 @@ Principais Melhorias e Considerações:
     para mais detalhes sobre os endpoints e parâmetros.
    
   </section>
-</body>
-</html>
+
