@@ -86,7 +86,7 @@ Tabela de Pagamentos:
     descricao VARCHAR(255)
   );
   </code></pre>
-  ![Tabela pagamentos](public/img/pagamentos.png)
+  ![Tabela pagamentos](public/img/tabela_pagamentos.png)
 
 Tabela de Logs:
 <code><pre>
@@ -100,10 +100,10 @@ Tabela de Logs:
 
 
     </code></pre>
-	  ![Tabela Logs](public/img/logs.png)
+	  ![Tabela Logs](public/img/tabela_logs.png)
   </section>
 
-  <hr>
+ 
 
   <!-- Seção 4: Execução da Aplicação -->
   <section id="execution">
