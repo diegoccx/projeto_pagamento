@@ -31,25 +31,21 @@ Principais características:
 
   
 
-    <h2>2. Pré-requisitos</h2>
-    <pre><code>
-Antes de começar, certifique-se de ter instalado:
-  • Node.js (v14 ou superior)
-  • npm (v6 ou superior)
-  • MySQL (ou outro banco de dados compatível)
-    </code></pre>
- 
+   ## 🚀 Começando
 
+### Pré-requisitos
+- Node.js v14+
+- npm v6+
+- MySQL ou compatível
 
+## ⚙️ Instalação
 
-  <!-- Seção 3: Instalação e Configuração -->
-  <section id="installation">
-    <h2>3. Instalação e Configuração</h2>
-    <pre><code>
-3.1 Clonando o Repositório:
-  $ git clone https://github.com/diegoccx/projeto_pagamento.git
-  $ cd projeto_pagamento
+1. Clone o repositório:
+```
+git clone https://github.com/diegoccx/projeto_pagamento.git
 
+cd projeto_pagamento
+```
 3.2 Instalando Dependências:
   $ npm install
 
