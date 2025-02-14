@@ -51,7 +51,7 @@ cd projeto_pagamento
    </code></pre>
    
  
-    <h2>3.2.1 Configuração do Arquivo .env</h2>
+#   3.2.1 Configuração do Arquivo .env
 	  ![Cobertura](public/img/env.png)
     <pre><code>
 - Para testar a integração com a API do Asaas, crie uma conta no Asaas Sandbox:
@@ -112,7 +112,7 @@ Para iniciar a aplicação:
     </code></pre>
   </section>
 
-  <hr>
+ 
 
   <!-- Seção 5: Funcionalidades e Fluxos de Pagamento -->
   <section id="functionalities">
@@ -136,7 +136,7 @@ Boleto:
     </code></pre>
   </section>
 
-  <hr>
+ 
 
   <!-- Seção 6: Exemplo de Uso da API -->
   <section id="api-usage">
@@ -163,7 +163,7 @@ Resposta:
     </code></pre>
   </section>
 
-  <hr>
+ 
 
   <!-- Seção 7: Testes e Cobertura -->
   <section id="testing">
@@ -180,7 +180,7 @@ Visualize a cobertura: public/img/cobertura.png (400px de largura)
     </code></pre>
   </section>
 
-  <hr>
+  
 
   <!-- Seção 8: Dados Armazenados -->
   <section id="data-storage">
@@ -196,7 +196,7 @@ Tabela de Logs:
     </code></pre>
   </section>
 
-  <hr>
+ 
 
   <!-- Seção 9: Licença -->
   <section id="license">
@@ -211,7 +211,7 @@ Links:
     </code></pre>
   </section>
 
-  <hr>
+  
 
   <!-- Seção 10: Considerações Finais -->
  <section id="improvements">
@@ -262,8 +262,7 @@ Links:
     </ol>
   </section>
 
-  <hr>
-
+ 
   <!-- Seção 11: Explicações Técnicas Adicionais -->
   <section id="technical-explanations">
     <h2>11. Explicações Técnicas Adicionais</h2>
