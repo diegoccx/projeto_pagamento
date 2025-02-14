@@ -46,14 +46,16 @@ git clone https://github.com/diegoccx/projeto_pagamento.git
 
 cd projeto_pagamento
 ```
-3.2 Instalando Dependências:
-  $ npm install
+# 3.2 Instalando Dependências:
+  <code><pre> $ npm install
+   </code></pre>
 
 3.3 Configurando o Banco de Dados:
   • Crie um banco de dados MySQL.
   • Execute os scripts SQL abaixo para criar as tabelas essenciais.
 
 Tabela de Pagamentos:
+<code><pre>
   CREATE TABLE pagamentos (
     id INT PRIMARY KEY AUTO_INCREMENT,
     valor DECIMAL(10, 2) NOT NULL,
