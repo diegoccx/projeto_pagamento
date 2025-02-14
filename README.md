@@ -3,7 +3,7 @@
 ## Descrição da Aplicação
 
 Esta aplicação permite realizar pagamentos utilizando os métodos Pix, cartão de crédito e boleto. Ela gera registros de pagamento e logs de todas as transações realizadas, com o objetivo de facilitar a gestão e auditoria dos pagamentos.
-<img src="caminho/para/imagem.png" alt="Texto Alternativo" width="200">
+<img src="public/img/bandeiras.png" alt="Texto Alternativo" width="200">
 
 ## Instalação e Execução
 
