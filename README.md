@@ -49,10 +49,28 @@ cd projeto_pagamento
 # 3.2 Instalando Dependências:
   <code><pre> $ npm install
    </code></pre>
+   
+  <section id="testing">
+    <h2>3.2.1 Configuração do Arquivo .env</h2>
+	  ![Cobertura](public/img/env.png)
+    <pre><code>
+- Para testar a integração com a API do Asaas, crie uma conta no Asaas Sandbox:
+      • Acesse: https://sandbox.asaas.com/ e registre-se.
+      • Após o cadastro, vá até "Configuração de Conta -> Integrações" para obter sua API Key de Sandbox.
+
+Para verificar a cobertura de código (meta de 80% ou mais):
+  $ npm run coverage
+
+Visualize a cobertura: public/img/cobertura.png (400px de largura)
+    </code></pre>
+  </section>  
 
 3.3 Configurando o Banco de Dados:
   • Crie um banco de dados MySQL.
   • Execute os scripts SQL abaixo para criar as tabelas essenciais.
+
+![Banco de Dados](public/img/db.png)
+
 
 Tabela de Pagamentos:
 <code><pre>
@@ -65,6 +83,7 @@ Tabela de Pagamentos:
     data_conclusao TIMESTAMP,
     descricao VARCHAR(255)
   );
+  ![Tabela pagamentos](public/img/pagamentos.png)
 
 Tabela de Logs:
   CREATE TABLE logs (
@@ -73,8 +92,9 @@ Tabela de Logs:
     mensagem TEXT NOT NULL,
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP
   );
+    ![Tabela Logs](public/img/logs.png)
 
-Visualize a estrutura do banco: public/img/db.png (400px de largura)
+
     </code></pre>
   </section>
 
@@ -148,6 +168,7 @@ Resposta:
   <!-- Seção 7: Testes e Cobertura -->
   <section id="testing">
     <h2>7. Testes e Cobertura de Código</h2>
+	  ![Cobertura](public/img/cobertura.png)
     <pre><code>
 Para testar a aplicação, execute:
   $ npm test
