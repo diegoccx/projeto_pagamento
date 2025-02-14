@@ -196,7 +196,10 @@ Para iniciar a aplicação:
   - Registra o pagamento com status "pendente"
   - Confirma o pagamento após compensação
    
-  
+##MENSAGEM erro
+- Mostra os detalhes do erro ao realizar uma operação.
+
+![ERROR](public/img/ERROR_CARTAO.png)  
 
  
 
